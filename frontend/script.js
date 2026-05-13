@@ -1,4 +1,4 @@
-const API_URL = "https://cc-9sxm.onrender.com/tasks";
+const API_URL = "https://student-task-manager-w4pm.onrender.com/tasks";
 
 async function loadTasks() {
 
