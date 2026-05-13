@@ -1,4 +1,4 @@
-const API_URL = 'https://cc-79uu.onrender.com';
+const API_URL = 'https://cc-xncf.onrender.com/tasks';
 
 async function loadTasks() {
 
