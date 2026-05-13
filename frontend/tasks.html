@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Tasks</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <div class="sidebar">
+
+    <h2>Task Manager</h2>
+
+    <a href="index.html">Dashboard</a>
+
+    <a href="tasks.html">Tasks</a>
+
+  </div>
+
+  <div class="main-content">
+
+    <div class="container">
+
+      <h1>Advanced Student Task Manager</h1>
+
+      <div class="task-box">
+
+        <input
+          type="text"
+          id="taskInput"
+          placeholder="Enter task"
+        >
+
+        <select id="priority">
+          <option>High</option>
+          <option>Medium</option>
+          <option>Low</option>
+        </select>
+
+        <button onclick="addTask()">
+          Add
+        </button>
+
+      </div>
+
+      <input
+        type="text"
+        id="searchInput"
+        placeholder="Search tasks..."
+        onkeyup="loadTasks()"
+      >
+
+      <h3 id="taskCount"></h3>
+
+      <ul id="taskList"></ul>
+
+    </div>
+
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+
+</html>

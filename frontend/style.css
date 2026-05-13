@@ -1,0 +1,164 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+
+  font-family: Arial, sans-serif;
+  display: flex;
+  min-height: 100vh;
+
+  background: linear-gradient(
+    135deg,
+    #1e3c72,
+    #2a5298,
+    #6dd5ed
+  );
+
+  background-size: cover;
+}
+
+.sidebar {
+
+  width: 250px;
+  background: rgba(0,0,0,0.8);
+  color: white;
+  padding: 30px;
+}
+
+.sidebar h2 {
+  margin-bottom: 30px;
+}
+
+.sidebar a {
+
+  display: block;
+  color: white;
+  text-decoration: none;
+  margin-bottom: 20px;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.sidebar a:hover {
+  background: #444;
+}
+
+.main-content {
+
+  flex: 1;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  padding: 30px;
+}
+
+.overlay {
+
+  background: rgba(0,0,0,0.6);
+  color: white;
+  padding: 50px;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.overlay h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+}
+
+.overlay p {
+  margin-bottom: 20px;
+  font-size: 18px;
+}
+
+.container {
+
+  background: rgba(255,255,255,0.95);
+
+  width: 700px;
+
+  padding: 30px;
+
+  border-radius: 10px;
+}
+
+.task-box {
+
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+
+input, select {
+
+  padding: 10px;
+}
+
+#taskInput {
+  flex: 1;
+}
+
+button {
+
+  padding: 10px 15px;
+  border: none;
+  background: blue;
+  color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+#searchInput {
+
+  width: 100%;
+  margin-bottom: 20px;
+}
+
+li {
+
+  background: #eee;
+  margin-top: 10px;
+  padding: 15px;
+  border-radius: 5px;
+  list-style: none;
+}
+
+.completed {
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+.task-header {
+
+  display: flex;
+  justify-content: space-between;
+}
+
+.priority {
+
+  color: white;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 12px;
+}
+
+.High {
+  background: red;
+}
+
+.Medium {
+  background: orange;
+}
+
+.Low {
+  background: green;
+}
