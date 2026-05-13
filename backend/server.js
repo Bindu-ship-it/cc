@@ -1,11 +1,19 @@
 const express = require('express');
 const cors = require('cors');
+const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
 app.use(cors());
 app.use(express.json());
+
+// ✅ serve frontend
+app.use(express.static(path.join(__dirname, '../frontend')));
+
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, '../frontend/index.html'));
+});
 
 let tasks = [
   {
@@ -24,7 +32,6 @@ app.get('/tasks', (req, res) => {
 
 // Add task
 app.post('/tasks', (req, res) => {
-
   const newTask = {
     id: Date.now(),
     title: req.body.title,
@@ -34,42 +41,29 @@ app.post('/tasks', (req, res) => {
   };
 
   tasks.push(newTask);
-
   res.json(newTask);
 });
 
 // Delete task
 app.delete('/tasks/:id', (req, res) => {
-
   const id = parseInt(req.params.id);
-
   tasks = tasks.filter(task => task.id !== id);
 
-  res.json({
-    message: 'Task deleted'
-  });
+  res.json({ message: 'Task deleted' });
 });
 
 // Toggle complete
 app.put('/tasks/:id', (req, res) => {
-
   const id = parseInt(req.params.id);
 
   tasks = tasks.map(task => {
-
     if (task.id === id) {
-      return {
-        ...task,
-        completed: !task.completed
-      };
+      return { ...task, completed: !task.completed };
     }
-
     return task;
   });
 
-  res.json({
-    message: 'Task updated'
-  });
+  res.json({ message: 'Task updated' });
 });
 
 app.listen(PORT, () => {
